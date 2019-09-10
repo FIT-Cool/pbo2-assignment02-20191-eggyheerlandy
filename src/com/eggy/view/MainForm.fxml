@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eggy.controller.MainFormController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+                
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="43.0" text="Name" />
+                  <Label text="Price" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="74.0" text="Category" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtName" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtCategoryName" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#SaveAction" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#ResetAction" prefHeight="25.0" prefWidth="45.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="45.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button disable="true" mnemonicParsing="false" onAction="#UpdateAction" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="95.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label prefHeight="17.0" prefWidth="116.0" text="Category Name" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#SaveCategoryAction" text="Save Category" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="55.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                  </SplitMenuButton>
+               </children>
+            </GridPane>
+            <TableView fx:id="tableDepartment" onMouseClicked="#tableClicked" prefHeight="263.0" prefWidth="600.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="colName" prefWidth="188.0" text="Name" />
+                <TableColumn fx:id="colPrice" prefWidth="199.0" text="Price" />
+                  <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="197.0" text="Category" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
